@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <style type="text/css">
+        a:link {
+            color: #000000;
+        }
+
+        a:visited {
+            color: #000000;
+        }
+
+        a:hover {
+            color: #999999;
+        }
+        #timeline {
+            width: 1400px;
+            height: 65px;
+            background-color: grey;
+        }
+        #timelinedata {
+            float: left;
+            width: 1260px;
+            height: 65px;
+            overflow: hidden;
+            background: url('rail.png') left 50px repeat-x;
+        }
+        .timeline-rail-left {
+            float: left;
+            width: 16px;
+            height: 65px;
+            background: url('left.png')center bottom no-repeat;
+        }
+        .timeline-rail-right {
+            float: left;
+            width: 16px;
+            height: 65px;
+            background: url('right.png')center bottom no-repeat;
+        }
+        .timeline-rail-space {
+            float: left;
+            width: 16px;
+            height: 65px;
+        }
+
+        .time-player {
+            float: left;
+            width: 80px;
+            height: 65px;
+        }
+        .time-player a{
+            width: 20px;
+            height: 65px;
+            padding-left: 4px;
+        }
+        .time-player-prev {
+            float: left;
+            width: 20px;
+            height: 65px;
+            background: url('prev-white.png')center bottom no-repeat;
+        }
+        .time-player-play {
+            float: left;
+            width: 20px;
+            height: 65px;
+            background: url('play-white.png')center bottom no-repeat;
+        }
+        .time-player-pause {
+            float: left;
+            width: 20px;
+            height: 65px;
+            background: url('pause-white.png')center bottom no-repeat;
+        }
+        .time-player-next {
+            float: left;
+            width: 20px;
+            height: 65px;
+            background: url('next-white.png')center bottom no-repeat;
+        }
+
+        #dates {
+            width: 860px;
+            height: 60px;
+            overflow: hidden;
+        }
+
+        #dates li {
+            list-style: none;
+            float: left;
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            text-align: center;
+            background: url('dot.png') center bottom no-repeat;
+        }
+
+        #dates a {
+            line-height: 38px;
+            padding-bottom: 10px;
+            text-decoration: none;
+        }
+
+        #dates .selected {
+            font-size: 24px;
+            background: url('new.png') center bottom no-repeat;
+            color: blue;
+        }
+
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.timeLineRail-0.1.00.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $().timeLineRail({
+                autoPlay: 'true',
+                issuesTransparencySpeed: 100,
+                autoPlayDirection: 'forward',
+                startAt: 1,
+                autoPlayPause: 1000,
+                arrowKeys: true
+            })
+        });
+    </script>
+</head>
+<body>
+<div id="timeline">
+    <div class="timeline-rail-left"></div>
+    <div id="timelinedata">
+        <ul id="dates">
+            <li><a href="javascript:void(0)" onclick="js_method(this)">00:00</a></li>
+            <li><a href="javascript:void(0)" onclick="js_method(this)">00:05</a></li>
+            <li><a href="javascript:void(0)" onclick="js_method(this)">00:10</a></li>
+            <li><a href="javascript:void(0)" onclick="js_method(this)">00:15</a></li>
+            <li><a href="javascript:void(0)" onclick="js_method(this)">00:20</a></li>
+            <li><a href="javascript:void(0)" onclick="js_method(this)">00:25</a></li>
+            <li><a href="javascript:void(0)" onclick="js_method(this)">00:30</a></li>
+            <li><a href="javascript:void(0)" onclick="js_method(this)">00:35</a></li>
+            <li><a href="javascript:void(0)" onclick="js_method(this)">00:40</a></li>
+            <li><a href="javascript:void(0)" onclick="js_method(this)">00:45</a></li>
+            <li><a href="javascript:void(0)" onclick="js_method(this)">00:50</a></li>
+            <li><a href="javascript:void(0)" onclick="js_method(this)">00:55</a></li>
+            <li><a href="javascript:void(0)" onclick="js_method(this)">01:00</a></li>
+            <li><a href="javascript:void(0)" onclick="js_method(this)">01:05</a></li>
+            <li><a href="javascript:void(0)" onclick="js_method(this)">01:10</a></li>
+            <li><a href="javascript:void(0)" onclick="js_method(this)">01:15</a></li>
+            <li><a href="javascript:void(0)" onclick="js_method(this)">01:20</a></li>
+            <li><a href="javascript:void(0)" onclick="js_method(this)">01:25</a></li>
+            <li><a href="javascript:void(0)" onclick="js_method(this)">01:30</a></li>
+            <li><a href="javascript:void(0)" onclick="js_method(this)">01:35</a></li>
+            <li><a href="javascript:void(0)" onclick="js_method(this)">01:40</a></li>
+            <li><a href="javascript:void(0)" onclick="js_method(this)">01:45</a></li>
+            <li><a href="javascript:void(0)" onclick="js_method(this)">01:50</a></li>
+            <li><a href="javascript:void(0)" onclick="js_method(this)">02:00</a></li>
+        </ul>
+    </div>
+    <div class="timeline-rail-right"></div>
+    <div class="timeline-rail-space"></div>
+    <div class="time-player">
+        <a id="prev" href="javascript:void(0)" class="time-player-prev" onclick=""></a>
+        <a id="pause" href="javascript:void(0)" class="time-player-pause" onclick=""></a>
+        <a id="next" href="javascript:void(0)" class="time-player-next" onclick=""></a>
+    </div>
+</div>
+
+<div id='2005'></div>
+</body>
+<script>
+    function js_method(index1) {
+        $("#2005").text($(index1).text());
+    }
+</script>
+</html>
