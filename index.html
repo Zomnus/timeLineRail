@@ -1,45 +1,73 @@
-<!DOCTYPE HTML>
 <html>
 <head>
     <style type="text/css">
-        a:link {
-            color: #000000;
-        }
-
-        a:visited {
-            color: #000000;
-        }
-
-        a:hover {
-            color: #999999;
-        }
-        #timeline {
-            width: 1400px;
+        .jtjc-south {
+            position: absolute;
+            bottom: 30px;
+            left: 10px;
+            width: 1000px;
             height: 65px;
-            background-color: grey;
         }
-        #timelinedata {
+
+        .timeline-rail {
+            position: relative;
+            margin: 38px 0 0 33px;
+        }
+
+        .timeline-rail-left {
+            position: absolute;
+            left: -15px;
+            width: 15px;
+            height: 65px;
+            background: url('left.png') center bottom 30px no-repeat;
+        }
+
+        .timeline-rail-right {
+            position: absolute;
+            width: 17px;
+            height: 65px;
+            background: url('right.png') center bottom 30px no-repeat;
+        }
+
+        .timelinedata {
             float: left;
-            width: 1260px;
+            width: 860px;
             height: 65px;
             overflow: hidden;
-            background: url('rail.png') left 50px repeat-x;
+            background: url('rail.png') left 60px bottom 32px repeat-x;
         }
-        .timeline-rail-left {
-            float: left;
-            width: 16px;
-            height: 65px;
-            background: url('left.png')center bottom no-repeat;
+
+        #dates {
+            height: 70px;
+            overflow: hidden;
         }
-        .timeline-rail-right {
-            float: left;
-            width: 16px;
-            height: 65px;
-            background: url('right.png')center bottom no-repeat;
+
+        #dates li {
+            display: inline-block;
+            width: 100px;
+            padding-top: 10px;
+            list-style: none;
+            cursor: pointer;
+            text-align: center;
         }
+
+        #dates a {
+            padding-top: 10px;
+            line-height: 38px;
+            padding-bottom: 10px;
+            text-decoration: none;
+            margin-left: 80px;
+        }
+
+        #dates .selected {
+            font-size: 25px;
+            background: url('new.png') center top 0px no-repeat;
+            color: darkslateblue;
+        }
+
         .timeline-rail-space {
             float: left;
-            width: 16px;
+            width: 26px;
             height: 65px;
         }
 
@@ -48,67 +76,40 @@
             width: 80px;
             height: 65px;
         }
-        .time-player a{
+
+        .time-player a {
             width: 20px;
             height: 65px;
             padding-left: 4px;
         }
+
         .time-player-prev {
             float: left;
             width: 20px;
-            height: 65px;
-            background: url('prev-white.png')center bottom 3px no-repeat;
+            background: url('prev-white.png') center bottom 28px no-repeat;
         }
+
         .time-player-play {
             float: left;
             width: 20px;
-            height: 65px;
-            background: url('play-white.png')center bottom 3px no-repeat;
+            background: url('play-white.png') center bottom 28px no-repeat;
         }
+
         .time-player-pause {
             float: left;
             width: 20px;
-            height: 65px;
-            background: url('pause-white.png')center bottom 3px no-repeat;
+            background: url('pause-white.png') center bottom 28px no-repeat;
         }
+
         .time-player-next {
             float: left;
             width: 20px;
-            height: 65px;
-            background: url('next-white.png')center bottom 3px no-repeat;
-        }
-
-        #dates {
-            width: 860px;
-            height: 60px;
-            overflow: hidden;
-        }
-
-        #dates li {
-            list-style: none;
-            float: left;
-            width: 100px;
-            height: 50px;
-            font-size: 20px;
-            text-align: center;
-            background: url('dot.png') center bottom no-repeat;
-        }
-
-        #dates a {
-            line-height: 38px;
-            padding-bottom: 10px;
-            text-decoration: none;
-        }
-
-        #dates .selected {
-            font-size: 24px;
-            background: url('new.png') center bottom no-repeat;
-            color: blue;
+            background: url('next-white.png') center bottom 28px no-repeat;
         }
 
     </style>
-    <script type="text/javascript" src="jquery-1.11.1.js"></script>
-    <script type="text/javascript" src="jquery.timeLineRail-0.1.00.js"></script>
+    <script src="jquery-1.11.1.js"></script>
+    <script src="jquery.timeLineRail-0.1.00.js"></script>
     <script type="text/javascript">
         $(function () {
             $().timeLineRail({
@@ -123,50 +124,50 @@
     </script>
 </head>
 <body>
-<div id="timeline">
-    <div class="timeline-rail-left"></div>
-    <div id="timelinedata">
-        <ul id="dates">
-            <li><a href="javascript:void(0)" onclick="js_method(this)">00:00</a></li>
-            <li><a href="javascript:void(0)" onclick="js_method(this)">00:05</a></li>
-            <li><a href="javascript:void(0)" onclick="js_method(this)">00:10</a></li>
-            <li><a href="javascript:void(0)" onclick="js_method(this)">00:15</a></li>
-            <li><a href="javascript:void(0)" onclick="js_method(this)">00:20</a></li>
-            <li><a href="javascript:void(0)" onclick="js_method(this)">00:25</a></li>
-            <li><a href="javascript:void(0)" onclick="js_method(this)">00:30</a></li>
-            <li><a href="javascript:void(0)" onclick="js_method(this)">00:35</a></li>
-            <li><a href="javascript:void(0)" onclick="js_method(this)">00:40</a></li>
-            <li><a href="javascript:void(0)" onclick="js_method(this)">00:45</a></li>
-            <li><a href="javascript:void(0)" onclick="js_method(this)">00:50</a></li>
-            <li><a href="javascript:void(0)" onclick="js_method(this)">00:55</a></li>
-            <li><a href="javascript:void(0)" onclick="js_method(this)">01:00</a></li>
-            <li><a href="javascript:void(0)" onclick="js_method(this)">01:05</a></li>
-            <li><a href="javascript:void(0)" onclick="js_method(this)">01:10</a></li>
-            <li><a href="javascript:void(0)" onclick="js_method(this)">01:15</a></li>
-            <li><a href="javascript:void(0)" onclick="js_method(this)">01:20</a></li>
-            <li><a href="javascript:void(0)" onclick="js_method(this)">01:25</a></li>
-            <li><a href="javascript:void(0)" onclick="js_method(this)">01:30</a></li>
-            <li><a href="javascript:void(0)" onclick="js_method(this)">01:35</a></li>
-            <li><a href="javascript:void(0)" onclick="js_method(this)">01:40</a></li>
-            <li><a href="javascript:void(0)" onclick="js_method(this)">01:45</a></li>
-            <li><a href="javascript:void(0)" onclick="js_method(this)">01:50</a></li>
-            <li><a href="javascript:void(0)" onclick="js_method(this)">02:00</a></li>
-        </ul>
-    </div>
-    <div class="timeline-rail-right"></div>
-    <div class="timeline-rail-space"></div>
-    <div class="time-player">
-        <a id="prev" href="javascript:void(0)" class="time-player-prev" onclick=""></a>
-        <a id="pause" href="javascript:void(0)" class="time-player-pause" onclick=""></a>
-        <a id="next" href="javascript:void(0)" class="time-player-next" onclick=""></a>
+<div class="ui-layout-center" id="subMain" style="overflow:hidden;">
+    <div class="ui-layout-center">
+
+        <div class="jtjc-south">
+            <div class="timeline-rail" style="width: 900px;">
+                <div class="timeline-rail-left"></div>
+                <div class="timeline-rail-right" style="left: 860px;"></div>
+                <div class="timelinedata">
+                    <ul id="dates">
+                        <li><a href="javascript:void(0)" onclick="js_method(this)">00:00</a></li>
+                        <li><a href="javascript:void(0)" onclick="js_method(this)">00:05</a></li>
+                        <li><a href="javascript:void(0)" onclick="js_method(this)">00:10</a></li>
+                        <li><a href="javascript:void(0)" onclick="js_method(this)">00:15</a></li>
+                        <li><a href="javascript:void(0)" onclick="js_method(this)">00:20</a></li>
+                        <li><a href="javascript:void(0)" onclick="js_method(this)">00:25</a></li>
+                        <li><a href="javascript:void(0)" onclick="js_method(this)">00:30</a></li>
+                        <li><a href="javascript:void(0)" onclick="js_method(this)">00:35</a></li>
+                        <li><a href="javascript:void(0)" onclick="js_method(this)">00:40</a></li>
+                        <li><a href="javascript:void(0)" onclick="js_method(this)">00:45</a></li>
+                        <li><a href="javascript:void(0)" onclick="js_method(this)">00:50</a></li>
+                        <li><a href="javascript:void(0)" onclick="js_method(this)">00:55</a></li>
+                        <li><a href="javascript:void(0)" onclick="js_method(this)">01:00</a></li>
+                    </ul>
+                </div>
+                <div class="timeline-rail-space"></div>
+            </div>
+            <div class="time-player">
+                <a id="prev" href="javascript:void(0)" class="time-player-prev" onclick=""></a>
+                <a id="pause" href="javascript:void(0)" class="time-player-pause" onclick=""></a>
+                <a id="next" href="javascript:void(0)" class="time-player-next" onclick=""></a>
+            </div>
+        </div>
+
     </div>
 </div>
 
+
 <div id='2005'></div>
-</body>
-<script>
+<script type="text/javascript">
+    //########################################################--GIS代码结束--########################################################
+    //业务代码
     function js_method(index1) {
         $("#2005").text($(index1).text());
     }
 </script>
+</body>
 </html>
